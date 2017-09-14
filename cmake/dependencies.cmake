@@ -84,3 +84,9 @@ find_package(tbb)
 # boost multiprecision   #
 ##########################
 find_package(Boost COMPONENTS multiprecision)
+
+if(Boost_FOUND)
+    include_directories(${Boost_INCLUDE_DIRS})
+    add_executable(progname file1.cxx file2.cxx)
+    target_link_libraries(progname ${Boost_LIBRARIES})
+endif()
