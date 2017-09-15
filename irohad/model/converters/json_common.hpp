@@ -18,7 +18,6 @@
 #ifndef IROHA_JSON_COMMON_HPP
 #define IROHA_JSON_COMMON_HPP
 
-#include <algorithm>
 #include <string>
 #include <unordered_map>
 
@@ -33,6 +32,7 @@
 #include "model/block.hpp"
 #include "model/common.hpp"
 #include "model/signature.hpp"
+#include <numeric>
 
 namespace iroha {
   namespace model {
