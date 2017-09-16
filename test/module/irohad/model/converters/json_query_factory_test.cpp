@@ -176,22 +176,22 @@ TEST(QuerySerializerTest, SerializeGetSignatories){
 }
 
 TEST(QuerySerializerTest, get_asset_info){
-  JsonQueryFactory queryFactory;
-  auto val = std::make_shared<GetAssetInfo>("coin#test");
+  QueryGenerator queryGenerator;
+  auto val = queryGenerator.generateGetAssetInfo();
   val->signature = generateSignature(42);
   runQueryTest(val);
 }
 
 TEST(QuerySerializerTest, get_roles){
   QueryGenerator queryGenerator;
-  auto val = std::make_shared<GetRoles>();
+  auto val = queryGenerator.generateGetRoles();
   val->signature = generateSignature(42);
   runQueryTest(val);
 }
 
 TEST(QuerySerializerTest, get_role_permissions){
   QueryGenerator queryGenerator;
-  auto val = std::make_shared<GetRolePermissions>("master");
+  auto val = queryGenerator.generateGetRolePermissions();
   val->signature = generateSignature(42);
   runQueryTest(val);
 }

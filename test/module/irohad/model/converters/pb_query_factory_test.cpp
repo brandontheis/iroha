@@ -85,16 +85,17 @@ TEST(PbQueryFactoryTest, SerializeGetSignatories){
 }
 
 TEST(PbQueryFactoryTest, get_roles){
-  auto query = std::make_shared<GetRoles>();
+
+  auto query = QueryGenerator{}.generateGetRoles();
   runQueryTest(query);
 }
 
 TEST(PbQueryFactoryTest, get_role_permissions){
-  auto query = std::make_shared<GetRolePermissions>("master");
+  auto query = QueryGenerator{}.generateGetRolePermissions();
   runQueryTest(query);
 }
 
 TEST(PbQueryFactoryTest, get_asset_info){
-  auto query = std::make_shared<GetAssetInfo>("coin#test");
+  auto query = QueryGenerator{}.generateGetAssetInfo();
   runQueryTest(query);
 }
