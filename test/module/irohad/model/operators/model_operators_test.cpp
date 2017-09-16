@@ -236,10 +236,10 @@ TEST(ModelOperatorTest, CreateRoleTest) {
 
 TEST(ModelOperatorTest, AppendRoleTest) {
   auto first = AppendRole("yoda","master");
-  auto second = AppendRole("obi","master");
+  auto second = AppendRole("yoda","master");
 
   ASSERT_EQ(first, second);
-  second.role_name = "padawan";
+  second.account_id = "obi";
   ASSERT_NE(first, second);
 }
 
