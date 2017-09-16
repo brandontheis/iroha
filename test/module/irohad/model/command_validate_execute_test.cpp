@@ -771,6 +771,6 @@ class GrantPermissionTest: public CommandValidateExecuteTest {
 };
 
 TEST_F(GrantPermissionTest, VadlidCase){
-  EXPECT_CALL(*wsv_command, insertAccountGrantablePermission(_, _)).WillOnce(Return(true));
+  EXPECT_CALL(*wsv_command, insertAccountGrantablePermission(_, _, _)).WillOnce(Return(true));
   ASSERT_TRUE(validateAndExecute());
 }

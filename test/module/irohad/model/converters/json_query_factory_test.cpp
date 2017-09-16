@@ -177,7 +177,6 @@ TEST(QuerySerializerTest, SerializeGetSignatories){
 
 TEST(QuerySerializerTest, get_asset_info){
   JsonQueryFactory queryFactory;
-  QueryGenerator queryGenerator;
   auto val = std::make_shared<GetAssetInfo>("coin#test");
   val->signature = generateSignature(42);
   runQueryTest(val);
