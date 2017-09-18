@@ -69,7 +69,9 @@ namespace iroha {
             {typeid(AppendRole), &JsonCommandFactory::serializeAppendRole},
             {typeid(CreateRole), &JsonCommandFactory::serializeCreateRole},
             {typeid(GrantPermission),
-             &JsonCommandFactory::serializeGrantPermission}};
+             &JsonCommandFactory::serializeGrantPermission},
+            {typeid(RevokePermission), &JsonCommandFactory::serializeRevokePermission}
+        };
 
         deserializers_ = {
             {"AddAssetQuantity",
@@ -88,7 +90,9 @@ namespace iroha {
             {"AppendRole", &JsonCommandFactory::deserializeAppendRole},
             {"CreateRole", &JsonCommandFactory::deserializeCreateRole},
             {"GrantPermission",
-             &JsonCommandFactory::deserializeGrantPermission}};
+             &JsonCommandFactory::deserializeGrantPermission},
+            {"RevokePermission", &JsonCommandFactory::deserializeRevokePermission}
+        };
       }
 
       // AddAssetQuantity
