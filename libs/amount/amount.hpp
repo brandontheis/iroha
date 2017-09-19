@@ -64,6 +64,16 @@ namespace iroha {
     Amount& operator=(Amount&&);
 
     /**
+     * @return integer value without placing decimal point
+     */
+    uint256_t getIntVal() const;
+
+    /**
+     * @return decimal precision (scale) of the amount
+     */
+    uint8_t getPrecision() const;
+
+    /**
      * Takes percentage from current amount
      * @param percents
      * @return

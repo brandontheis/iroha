@@ -59,6 +59,10 @@ namespace iroha {
     return *this;
   }
 
+  uint256_t Amount::getIntVal() const { return value_; }
+
+  uint8_t Amount::getPrecision() const { return precision_; }
+
   Amount Amount::percentage(uint256_t percents) const {
     uint256_t new_val = value_ * percents / 100;
     return {new_val, precision_};
